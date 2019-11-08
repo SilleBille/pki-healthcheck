@@ -2,7 +2,7 @@
 # Copyright (C) 2019 FreeIPA Contributors see COPYING for license
 #
 
-from cshealthcheck.cs.plugin import CSPlugin, registry
+from pkihealthcheck.cs.plugin import CSPlugin, registry
 from ipahealthcheck.core.plugin import Result, duration
 from ipahealthcheck.core import constants
 

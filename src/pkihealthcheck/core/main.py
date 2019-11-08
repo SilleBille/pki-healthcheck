@@ -26,7 +26,7 @@ logger = logging.getLogger()
 def find_registries():
     return {
         ep.name: ep.resolve()
-        for ep in pkg_resources.iter_entry_points('cshealthcheck.registry')
+        for ep in pkg_resources.iter_entry_points('pkihealthcheck.registry')
     }
 
 

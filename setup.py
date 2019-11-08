@@ -2,31 +2,31 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name='cshealthcheck',
+    name='pkihealthcheck',
     version='0.1',
-    namespace_packages=['cshealthcheck'],
+    namespace_packages=['pkihealthcheck'],
     package_dir={'': 'src'},
     # packages=find_packages(where='src'),
     packages=[
-        'cshealthcheck.core',
-        'cshealthcheck.cs',
+        'pkihealthcheck.core',
+        'pkihealthcheck.cs',
     ],
     entry_points={
-        # creates bin/cs-healthcheck
+        # creates bin/pki-healthcheck
         'console_scripts': [
-            'cs-healthcheck = cshealthcheck.core.main:main',
+            'pki-healthcheck = pkihealthcheck.core.main:main',
         ],
         # register the plugin with ipa-healthcheck
         'ipahealthcheck.registry': [
-            'cshealthcheck.cs = cshealthcheck.cs.plugin:registry',
+            'pkihealthcheck.cs = pkihealthcheck.cs.plugin:registry',
         ],
-        # register the plugin with cs-healthcheck
-        'cshealthcheck.registry': [
-            'cshealthcheck.cs = cshealthcheck.cs.plugin:registry',
+        # register the plugin with pki-healthcheck
+        'pkihealthcheck.registry': [
+            'pkihealthcheck.cs = pkihealthcheck.cs.plugin:registry',
         ],
-        # plugin modules for cshealthcheck.cs registry
-        'cshealthcheck.cs': [
-            'cs_certs = cshealthcheck.cs.certs',
+        # plugin modules for pkihealthcheck.cs registry
+        'pkihealthcheck.cs': [
+            'pki_certs = pkihealthcheck.cs.certs',
         ],
     },
     classifiers=[
