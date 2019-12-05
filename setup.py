@@ -9,7 +9,7 @@ setup(
     # packages=find_packages(where='src'),
     packages=[
         'pkihealthcheck.core',
-        'pkihealthcheck.cs',
+        'pkihealthcheck.pki',
     ],
     entry_points={
         # creates bin/pki-healthcheck
@@ -18,15 +18,15 @@ setup(
         ],
         # register the plugin with ipa-healthcheck
         'ipahealthcheck.registry': [
-            'pkihealthcheck.cs = pkihealthcheck.cs.plugin:registry',
+            'pkihealthcheck.pki = pkihealthcheck.pki.plugin:registry',
         ],
         # register the plugin with pki-healthcheck
         'pkihealthcheck.registry': [
-            'pkihealthcheck.cs = pkihealthcheck.cs.plugin:registry',
+            'pkihealthcheck.pki = pkihealthcheck.pki.plugin:registry',
         ],
-        # plugin modules for pkihealthcheck.cs registry
-        'pkihealthcheck.cs': [
-            'pki_certs = pkihealthcheck.cs.certs',
+        # plugin modules for pkihealthcheck.pki registry
+        'pkihealthcheck.pki': [
+            'pki_certs = pkihealthcheck.pki.certs',
         ],
     },
     classifiers=[
